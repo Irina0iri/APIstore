@@ -1,0 +1,19 @@
+package com.API01;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@SpringBootApplication
+public class Api01Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Api01Application.class, args);
+	}
+	@GetMapping("/hello")
+	public String hello (@RequestParam (value = "name", defaultValue = "world") String name){
+		return String.format("hello %s!", name);
+	}
+
+}
