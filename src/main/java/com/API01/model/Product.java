@@ -1,12 +1,23 @@
 package com.API01.model;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Entity
+@Table(name = "Storage")
+@NoArgsConstructor
 public class Product {
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private int code;
-    private String  name;
+    @Column
+    private String name;
+    @Column
     private double price;
+    @Column
     private String description;
 
     public Product(int code, String name, double price, String description) {
